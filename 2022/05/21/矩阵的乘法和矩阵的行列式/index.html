@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://s2.loli.net/2022/05/21/gkphEbxOsul1PB8.png">
 <meta property="og:image" content="https://s2.loli.net/2022/05/21/oy7hHT3OCdcWr8f.png">
 <meta property="article:published_time" content="2022-05-21T11:00:42.977Z">
-<meta property="article:modified_time" content="2022-05-21T15:13:44.395Z">
+<meta property="article:modified_time" content="2022-05-21T15:27:42.057Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s2.loli.net/2022/05/21/TZHIkUtLMFYQEVc.jpg">
@@ -214,7 +214,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      45 分钟
+      46 分钟
     </span>
   
 
@@ -385,7 +385,7 @@ class="math inline">\(（A*B）*C=A*(B*C)\)</span></li>
 class="math inline">\(A*A^{-1}=E\)</span></li>
 </ol>
 <p>但是对于<span
-class="math inline">\(m*n\)</span>矩阵其逆元不一定存在。至此，我们对照上面的群论的知识。我们可以得出他是一个<strong>环</strong>。可把他称为为一个<strong>矩阵环</strong>。</p>
+class="math inline">\(m*n\)</span>矩阵其逆元不一定存在。而且它不满足乘法的结合律。至此，我们对照上面的群论的知识。我们可以得出他是一个<strong>环</strong>。可把他称为为一个<strong>矩阵环</strong>。环是比域条件更为宽松的代数结构。</p>
 <h3 id="矩阵乘法的意义">矩阵乘法的意义</h3>
 <p>对于矩阵的加法，我们可以理解为其列向量组的加法。就是所在空间向量的相加。
 <span class="math display">\[
@@ -497,11 +497,11 @@ class="math inline">\(\begin{pmatrix}  \sqrt{2}&amp;\sqrt{2}\\  -\sqrt{2}&amp;\s
 class="math inline">\(A*B*B^{-1}=A\)</span>，我们可以这么去理解，<span
 class="math inline">\(A*B\)</span>是向量组A在B矩阵的变换下，得到了一个新的矩阵<span
 class="math inline">\(A*B\)</span>。此时，我们再乘以一个矩阵<span
-class="math inline">\(B\)</span>，也就是再经过一个变换<span
+class="math inline">\(B^{-1}\)</span>，也就是再经过一个变换<span
 class="math inline">\(B^{-1}\)</span>，我们又可以得到最初的矩阵A。这个变换<span
 class="math inline">\(B^{-1}\)</span>就是变换<span
 class="math inline">\(B\)</span>的逆变换。</p>
-值得一提的就是，有些矩阵是没有没有逆变换的。这些矩阵就是非满秩矩阵。为什么非满秩矩阵起到了一个降维的作用，就比如说$
+值得一提的就是，有些矩阵是没有没有逆变换的。这些矩阵就是非满秩矩阵。为什么非满秩矩阵美味又逆变换？它起到了一个降维的作用，就比如说$
 <span class="math display">\[\begin{pmatrix}
     1&amp;1\\
     0&amp;0\\
