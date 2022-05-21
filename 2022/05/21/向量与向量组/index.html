@@ -1,0 +1,459 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="线代的理解——向量以及向量组一、序言首先在前言，以我有限的我的水平评价一下当前国内的教材，不知各位读者有没有这样的感受，国内的教材其实并不适合拿来教学，尤其是没有教师的情况下。国内的教材采用的是前苏联的编写方式，把所有的精华部分都浓缩在一起，这使得教材在某种意义上更像是一本字典，看得懂的看得懂，看不懂的人看不懂。没有老师的情况下，如果想一个人读懂教材，其实难度很大。或者换句话来说就是不是人读的，没">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jinyan">
+<meta property="og:url" content="http://example.com/2022/05/21/%E5%90%91%E9%87%8F%E4%B8%8E%E5%90%91%E9%87%8F%E7%BB%84/index.html">
+<meta property="og:site_name" content="Jinyan">
+<meta property="og:description" content="线代的理解——向量以及向量组一、序言首先在前言，以我有限的我的水平评价一下当前国内的教材，不知各位读者有没有这样的感受，国内的教材其实并不适合拿来教学，尤其是没有教师的情况下。国内的教材采用的是前苏联的编写方式，把所有的精华部分都浓缩在一起，这使得教材在某种意义上更像是一本字典，看得懂的看得懂，看不懂的人看不懂。没有老师的情况下，如果想一个人读懂教材，其实难度很大。或者换句话来说就是不是人读的，没">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2022/05/20/UqcMbDO4Lzl7uIP.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/20/NMQm7FvXOLZrYlU.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/20/ax6Hbez4AVuQryG.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/21/yq3roUWKOJedID1.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/21/BnOXIPaWkdQFxcj.png">
+<meta property="article:published_time" content="2022-05-21T02:07:11.381Z">
+<meta property="article:modified_time" content="2022-05-21T02:06:17.365Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s2.loli.net/2022/05/20/UqcMbDO4Lzl7uIP.png">
+  
+  
+  <title>Jinyan</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-05-21 10:07" pubdate>
+        May 21, 2022 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.1k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      35 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+            <div class="markdown-body">
+              <h1 id="线代的理解——向量以及向量组"><a href="#线代的理解——向量以及向量组" class="headerlink" title="线代的理解——向量以及向量组"></a>线代的理解——向量以及向量组</h1><h2 id="一、序言"><a href="#一、序言" class="headerlink" title="一、序言"></a>一、序言</h2><p>首先在前言，以我有限的我的水平评价一下当前国内的教材，不知各位读者有没有这样的感受，国内的教材其实并不适合拿来教学，尤其是没有教师的情况下。国内的教材采用的是前苏联的编写方式，把所有的精华部分都浓缩在一起，这使得教材在某种意义上更像是一本字典，看得懂的看得懂，看不懂的人看不懂。没有老师的情况下，如果想一个人读懂教材，其实难度很大。或者换句话来说就是不是人读的，没有从人性化的角度去思考如何编写教材，让学生更加容易理解概念是如何产生的，以及它的应用领域在哪里。从这个角度来讲，国外的教材就好得多，它经常就会从身边特别切合实际的角度出发，一步步带领读者领略前人的智慧。（虽然这就导致了国外的教材动辄就六七百页）</p>
+<p>所以，基于此，我想对现在国内的线代教材的知识进行进行一个直观化的解释，让读者对课本上天花乱坠的数学符号有一个不一样的理解。但愿我能做到，也希望我能让你做到。</p>
+<h2 id="二、线性代数"><a href="#二、线性代数" class="headerlink" title="二、线性代数"></a>二、线性代数</h2><p>现今的数学主要研究三个领域——代数学，分析学，几何学。分析学主要研究的是函数的性质，像是大一数学专业学的数学分析，就是分析学的基础，导数、连续、可微等等。<strong>而对于代数，它是研究什么的呢？答案是运算</strong>。在集合论的定义下，我们有了集合，有了我们要处理的东西，但是单单有集合还不够，我们需要对它们进行运算，这就是代数研究的内容。但是我不知读者学习线性代数的时候有没有体会到运算的魅力。于我而言，我初学的时候的确没有。</p>
+<p>还有一个需要提的，就是代数这东西很抽象，他研究的不是一个具体的数或者是量，他研究的往往是一个抽象的集合。而他的定义的东西也很抽象，从其目的而言，他本身的目的就是提取运算之间的那些抽象的性质，形成一个更加上层的概念。你有没思考过，为什么矩阵有加法，实数也有加法，对于乘法他们也一同拥有，但是他们的乘法似乎有那么一点不一样。那就是矩阵乘法不满足乘法交换律。这又是为什么？对于向量而言，它不满足乘法结合律，$\vec{a}*(\vec{b}*\vec{c})\neq(\vec{a}*\vec{b})*\vec{c}$，这又是为什么？这就是代数研究的一个问题，那就是运算。</p>
+<h2 id="三、向量与向量组"><a href="#三、向量与向量组" class="headerlink" title="三、向量与向量组"></a>三、向量与向量组</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h3><p>首先以我的理解角度而言，我觉得线代不应该以矩阵讲起，对于矩阵，你丝毫不其物理含义（虽然说代数就是要抽象，但是如果没有一个直观的理解，很难明白其产生的意义）学习矩阵就是学习一堆变化，只会让人学习起来味如爵蜡。我想先以向量以及向量组说起。</p>
+<p>首先，向量是什么？这里就是集合论的问题。这里的向量指的是更加抽象意义上的向量，和我们之前学的空间向量不同。空间向量只是代数课本的向量的一个具体化。但是在学习的时候，<strong>建议以空间向量作为参考</strong>，思索每个定义、每个定理的的含义。课本中向量可以抽象到大于3维，但是空间向量只有3维。向量的定义<strong>定义：$\vec{a}&#x3D;(a_1,a_2,…,a_n)$</strong> 。</p>
+<p>有了向量这个集合，或者说是这个研究对象之后，我们就可以进行研究他们的运算。我想读者学习的时候有这么一个意识就是，所有的东西都是我们定义出来的。包括前面的向量，你先定义有这么一个向量集合，在这个集合的基础上，我们再定义它上面的运算。没错这个运算也是定义出来的。我完全可以把减法的符号定义为加法，除法符号定义为乘法。总之抛弃你所有所学的东西，你只有你刚刚定义的这个集合（这个集合里面只有向量），然后在此基础上定义运算。</p>
+<p><strong>向量加法的定义：</strong><img src="https://s2.loli.net/2022/05/20/UqcMbDO4Lzl7uIP.png" srcset="/img/loading.gif" lazyload alt="向量加法的定义"></p>
+<p><strong>向量数量乘法的定义</strong><img src="https://s2.loli.net/2022/05/20/NMQm7FvXOLZrYlU.png" srcset="/img/loading.gif" lazyload alt="image-20220520221304202"></p>
+<p>这里我多插一嘴，<strong>数量乘法</strong>和他们两者之间的乘法，他们两个是完全不同的运算。这里强调我完全可以定义两个不同的符号来说明这两个乘法，因为他们是两个毫不相关的东西。</p>
+<p>那么这个加法和数量乘法的，它们有什么性质呢？记住这八条，这八条很重要。虽然它看起来是那么的显然，但是它涉及到一个非常重要的概念，那就是<strong>线性空间</strong>。但是我不能在这里说明过多线性空间的知识（留到之后在说明）。</p>
+<p><strong><img src="https://s2.loli.net/2022/05/20/ax6Hbez4AVuQryG.png" srcset="/img/loading.gif" lazyload alt="向量的运算性质"></strong></p>
+<h3 id="2-向量组的相关性"><a href="#2-向量组的相关性" class="headerlink" title="2.向量组的相关性"></a>2.向量组的相关性</h3><p>何为相关何为不相关？其实给两张图像，就可以很简单的解释。</p>
+<p><img src="https://s2.loli.net/2022/05/21/yq3roUWKOJedID1.png" srcset="/img/loading.gif" lazyload alt="线性相关"></p>
+<p><img src="https://s2.loli.net/2022/05/21/BnOXIPaWkdQFxcj.png" srcset="/img/loading.gif" lazyload alt="线性无关"></p>
+<p>首先观察向量$(\vec{a_1},\vec{a_2})$，这个向量组，需要一个平面空间来描述出他们的位置关系，或者是更高维的空间，但是不能只是d,利用一维的空间描述。对于向量组$(\vec{a_1},\vec{a_2})$，我们添加一个新的向量$\vec{a_3}$或者是$\vec{a_4}$，我们会判断新加的向量是否和$(\vec{a_1},\vec{a_2})$所在的平面共面。</p>
+<p>对于向量$(\vec{a_1},\vec{a_2},\vec{a_3})$，按照高中学过的判断向量是否共面的知识，存在$k_1,k_2$，使得$k_1\vec{a_1}+k_2\vec{a_2}&#x3D;\vec{a_3}$，而我们自己回想这个形式，会发现它和判断向量组是否相关非常相似。没错！他们就是师出同源。换个说法，我也可以说他们这三个向量线性相关。</p>
+<p>而对于$(\vec{a_1},\vec{a_2},\vec{a_4})$，他们并不共面，按照数学的语言描述就是，不存在$k_1,k_2$，使得$k_1\vec{a_1}+k_2\vec{a_2}&#x3D;\vec{a_4}$。如果没有三维空间，只是局限于二维平面，那么将不可描述出他们的位置关系。</p>
+<p>对于$(\vec{a_1},\vec{a_2})$、$(\vec{a_1},\vec{a_2},\vec{a_3})$，我$(\vec{a_1},\vec{a_2})$、$(\vec{a_1},\vec{a_2},\vec{a_3})$们分别需要一个二维、二维、三维的空间来描述他们的位置关系。为什么呢？他们的所需描述的空间维数和向量组的里面的向量的个数不完全一致呢？下面的话，就是自然而然的引出了向量空间的概念。</p>
+<p>我们简单理解<strong>向量空间</strong>为描述一个向量组的所需空间，它的维数是最少能描述的向量组里面向量位置关系的维数。对于$(\vec{a_1},\vec{a_2})$、$(\vec{a_1},\vec{a_2},\vec{a_3})$，它的向量空间是一个二维的平面空间，而对于$(\vec{a_1},\vec{a_2},\vec{a_3})$，他至少需要一个三维的立体空间来描述。换个专业一点说法就是，$(\vec{a_1},\vec{a_2})$、$(\vec{a_1},\vec{a_2},\vec{a_3})$<strong>张成</strong>的向量空间是一个二维的空间，而$(\vec{a_1},\vec{a_2},\vec{a_4})$<strong>张成</strong>的向量空间是一个三维的空间。这个向量空间里面所有的向量都可以这个向量组的线性组合来表示。</p>
+<p>对于向量空间，我们有两个特别需要关注的特征。那就是<strong>维数和基</strong>。对于维数，他等于一个线性无关的向量组的个数，比如说$(\vec{a_1},\vec{a_2})$和$(\vec{a_1},\vec{a_2},\vec{a_3})$，但是对于线性相关的向量组怎么办？数学家有了另外一个定义，那就是向量组的<strong>秩</strong>。对于线性无关的向量组，它的秩就是它的个数。而对于线性相关的向量组，它的秩就不一定和向量组里面的向量个数一样，但是它和它张成向量空间的维数相同。</p>
+<p>但是对于向量组我们怎么求得它的秩呢？数学家又很聪明。把向量组组成一个矩阵，矩阵的秩和向量组的是一样。</p>
+<p>$\vec{a_1}&#x3D;(1,3,0),\vec{a_2}&#x3D;(3,1,0),\vec{a_3}&#x3D;(4,4,0),\vec{a_4}(0,0,2)$，这是上面的向量空间位置表示。把他变成一个矩阵，可以很容易的明白这个矩阵的秩和向量组的秩是相同的。但有时候我们并不是还容易看出这个矩阵的秩，这时候我们可以对他进行初等变换把它变成一个行阶梯形矩阵，初等变换并不会改变这个矩阵的秩。<strong>这就是矩阵的作用！</strong><br>$$<br>(\vec{a_1},\vec{a_2},\vec{a_3})<br>&#x3D;<br>\left(<br>\begin{matrix}<br>    1 &amp; 3 &amp; 4 \<br>    3 &amp; 1 &amp; 4 \<br>    0 &amp; 0 &amp; 0 \<br>    \end{matrix}<br>    \right)<br>$$</p>
+<p>$$<br>(\vec{a_1},\vec{a_2},\vec{a_4})<br>&#x3D;<br>\left(<br>\begin{matrix}<br>    1 &amp; 3 &amp; 0 \<br>    3 &amp; 1 &amp; 0 \<br>    0 &amp; 0 &amp; 1 \<br>    \end{matrix}<br>    \right)<br>$$</p>
+<p>刚刚讨论的是向量空间的维数，接下来是向量空间的基。对于$(\vec{a_1},\vec{a_2})$，$(\vec{a_1},\vec{a_2},\vec{a_3})$都可以描述线性组合表述出其他的向量，但是他们又有不同。那就是对于$\vec{b}$，$(\vec{a_1},\vec{a_2})$，可以找到唯一的$k_1$和$k_2$使得$k_1\vec{a_1}+k_2\vec{a_2}&#x3D;\vec{b}$，但是对于$(\vec{a_1},\vec{a_2},\vec{a_3})$，它的表出方式并不唯一。我们希望用唯一的表出方式还是不唯一？答案是显然的。我们不希望对于一个事情的描述方式不唯一，那样只会增加我们的麻烦。换一个说法，**$(\vec{a_1},\vec{a_2})$就是他所张成的向量空间的一个基<strong>。</strong>在这个基下，对于任意向量，我们可以有唯一的表出方式。<strong>那么对于$(\vec{a_1},\vec{a_2},\vec{a_3})$，这个向量组，也张成了向量空间，他的基是什么？我们不能把向量组里面所有的向量作为基。但是我们可以选择两个，$(\vec{a_1},\vec{a_2})$，这个就是这个向量空间的基。再回到课本，我们把$(\vec{a_1},\vec{a_2})$称为$(\vec{a_1},\vec{a_2},\vec{a_3})$的一个</strong>极大线性无关组。**</p>
+<p>到此，我们的向量与向量组的的直观概念解释到此就结束了。回到开头说的一句话，就是课本所说的向量和向量组是一个更为抽象的概念，这里只是为了直观理解把向量具体化为空间向量。</p>
+<p>我相信有了这个直观的例子，再去看课本的定理就只容易理解的多。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/09/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E7%9A%84%E6%99%AE%E9%80%82%E6%80%A7%E2%80%94%E2%80%94%E5%AD%A6%E7%94%9F%E6%88%90%E7%BB%A9/">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
