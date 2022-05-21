@@ -1,0 +1,792 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="矩阵的乘法和矩阵的行列式 矩阵乘法和环 群论和环 在前一章当中，我们介绍了加法封闭性的线性空间，接下来让我们来介绍下一个非常重要的代数结构，那就是环。   feb8dbb0222be967e7b04f81d69267cc_1440w  以上是群论的一个内容的框图。我们利用群论的知识，也可以把线性空间定义为一个定义了数量乘法的阿贝尔群。群论的知识说简单也抽象，说复杂也不难。但是我觉得">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jinyan">
+<meta property="og:url" content="http://example.com/2022/05/21/%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B9%98%E6%B3%95%E5%92%8C%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F/index.html">
+<meta property="og:site_name" content="Jinyan">
+<meta property="og:description" content="矩阵的乘法和矩阵的行列式 矩阵乘法和环 群论和环 在前一章当中，我们介绍了加法封闭性的线性空间，接下来让我们来介绍下一个非常重要的代数结构，那就是环。   feb8dbb0222be967e7b04f81d69267cc_1440w  以上是群论的一个内容的框图。我们利用群论的知识，也可以把线性空间定义为一个定义了数量乘法的阿贝尔群。群论的知识说简单也抽象，说复杂也不难。但是我觉得">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2022/05/21/TZHIkUtLMFYQEVc.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/05/21/ah4mUJ983HjPeiv.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/21/P8k2OGDMh5vnXtL.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/21/3PhQB7uHtrOClUi.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/21/k8ciHzdIEDMZ734.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/21/StQhENiLxOgzuYl.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/21/gkphEbxOsul1PB8.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/21/oy7hHT3OCdcWr8f.png">
+<meta property="article:published_time" content="2022-05-21T11:00:42.977Z">
+<meta property="article:modified_time" content="2022-05-21T15:13:44.395Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s2.loli.net/2022/05/21/TZHIkUtLMFYQEVc.jpg">
+  
+  
+  <title>Jinyan</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-05-21 19:00" pubdate>
+        May 21, 2022 pm
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5.4k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      45 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+            <div class="markdown-body">
+              <h1 id="矩阵的乘法和矩阵的行列式">矩阵的乘法和矩阵的行列式</h1>
+<h2 id="矩阵乘法和环">矩阵乘法和环</h2>
+<h3 id="群论和环">群论和环</h3>
+<p>在前一章当中，我们介绍了加法封闭性的线性空间，接下来让我们来介绍下一个非常重要的代数结构，那就是<strong>环</strong>。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/21/TZHIkUtLMFYQEVc.jpg" srcset="/img/loading.gif" lazyload
+alt="feb8dbb0222be967e7b04f81d69267cc_1440w" />
+<figcaption
+aria-hidden="true">feb8dbb0222be967e7b04f81d69267cc_1440w</figcaption>
+</figure>
+<p>以上是<strong>群论</strong>的一个内容的框图。我们利用群论的知识，也可以把线性空间定义为一个<strong>定义了数量乘法的阿贝尔群</strong>。群论的知识说简单也抽象，说复杂也不难。但是我觉得我说不清楚。从这张图当中，你也许就明白了为什么代数是研究运算的（此前说过）。为什么空间向量不满足乘法结合律（<span
+class="math inline">\(\vec{a}*(\vec{b}*\vec{c})\neq(\vec{a}*\vec{b})*\vec{c}\)</span>），而对于矩阵为什么不满足乘法的交换律。让我们先慢慢了解群论的一小部分，</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 47%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>加法</th>
+<th>乘法</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>封闭性</td>
+<td>集合上的元素相加之后仍在集合当中</td>
+<td>集合上的元素相乘之后仍在集合当中</td>
+</tr>
+<tr class="even">
+<td>结合律</td>
+<td><span class="math inline">\(（a+b）+c=a+(b+c)\)</span></td>
+<td><span class="math inline">\((a*b)*c=a*(b*c)\)</span></td>
+</tr>
+<tr class="odd">
+<td>单位元</td>
+<td>存在0，使得，<span
+class="math inline">\(a+0=a\)</span>，我们便把0成为单位元</td>
+<td>存在0，使得，<span
+class="math inline">\(a*0=a\)</span>，便把0成为单位元</td>
+</tr>
+<tr class="even">
+<td>逆元</td>
+<td>存在<span class="math inline">\(a^-1\)</span>，使得，<span
+class="math inline">\(a^-1+a=0\)</span>，这里的0指的是单位元，便把<span
+class="math inline">\(a^-1\)</span>称为逆元</td>
+<td>存在<span class="math inline">\(a^-1\)</span>，使得，<span
+class="math inline">\(a^-1*a=0\)</span>，这里的0指的是单位元，便把<span
+class="math inline">\(a^-1\)</span>称为逆元</td>
+</tr>
+<tr class="odd">
+<td>交换律</td>
+<td><span class="math inline">\(a+b=b+a\)</span></td>
+<td><span class="math inline">\(a*b=b*a\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>举个例子，实数集合<span
+class="math inline">\(R\)</span>，对于它的加法<span
+class="math inline">\((R,+)\)</span></p>
+<ol type="1">
+<li><p>满足封闭性，两个实数相加还是实数</p></li>
+<li><p>满足结合律，<span
+class="math inline">\(（a+b）+c=a+(b+c)\)</span></p></li>
+<li><p>存在单位元0，<span class="math inline">\(a+0=a\)</span></p></li>
+<li><p>存在逆元，a+（-a）=0</p></li>
+<li><p>满足交换律，<span class="math inline">\(a+b=b+a\)</span></p></li>
+</ol>
+<p>对于乘法，<span class="math inline">\((R,*)\)</span></p>
+<ol type="1">
+<li><p>满足封闭性，两个实数相乘还是实数。</p></li>
+<li><p>满足结合律，<span
+class="math inline">\(（a*b）*c=a*(b*c)\)</span></p></li>
+<li><p>有单位元1，<span class="math inline">\(a*1=a\)</span></p></li>
+<li><p>存在逆元，<span
+class="math inline">\(a*a^{-1}=1\)</span></p></li>
+<li><p>满足交换律，<span class="math inline">\(a*b=b*a\)</span></p></li>
+</ol>
+<p>好的，满足了这十条性质，那我们便把它成为一个域，简称实数域。除了实数域，还有复数域可能也是常用，对于上面的乘法，我们是这样规定的，<span
+class="math inline">\((a_1+i*b_1)*(a_2+i*b_2)=(a_1*a_2-b_1*b_2)+i*(a_1*a_2+b_1*b_2)\)</span>，没错，一定要注意，这是我们定义出来。他同样满足乘法的五条性质。加法也是，故我们可以把他成为复数域。</p>
+<p>那同样的道理我们的矩阵是不是也可以成为一个域呢？让我们回顾一下我们是怎么定义矩阵的加法还有乘法的。</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+    a_1&amp;b_1&amp;c_1\\
+    a_2&amp;b_2&amp;c_2\\
+    a_3&amp;b_3&amp;c_3\\
+\end{pmatrix}+
+\begin{pmatrix}
+    d_1&amp;e_1&amp;f_1\\
+    d_2&amp;e_2&amp;f_2\\
+    d_3&amp;e_3&amp;f_3\\
+\end{pmatrix}=
+\begin{pmatrix}
+    a_1+d_1&amp;b_1+e_1&amp;c_1+f_1\\
+    a_2+d_2&amp;b_2+e_2&amp;c_2+f_2\\
+    a_3+d_3&amp;b_3+e_3&amp;c_3+f_3\\
+\end{pmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\begin{pmatrix}
+    a_1&amp;b_1\\
+    a_2&amp;b_2\\
+\end{pmatrix}*
+\begin{pmatrix}
+    c_1&amp;d_1\\
+    c_2&amp;d_2\\
+\end{pmatrix}=
+\begin{pmatrix}
+    a_1*c_1+a_2*c_2&amp;a_1*d_1+a_2*d_2\\
+    b_1*c_1+b_2*c_2&amp;b_1*d_1+b_2*d_2
+\end{pmatrix}
+\]</span></p>
+<p>可以验证对于<span
+class="math inline">\(n*n\)</span>矩阵，还有其加法</p>
+<ol type="1">
+<li><p>满足封闭性，两个矩阵相加还是矩阵</p></li>
+<li><p>满足结合律，<span
+class="math inline">\((A+B)+C=A+(B+C)\)</span>，</p></li>
+<li><p>存在单位元<span
+class="math inline">\(O=\begin{pmatrix}  0&amp;0&amp;0\\  0&amp;0&amp;0\\  0&amp;0&amp;0\\  \end{pmatrix}\)</span>，<span
+class="math inline">\(A+O=A\)</span></p></li>
+<li><p>存在逆元-A，<span
+class="math inline">\(A+（-A）=O\)</span></p></li>
+<li><p>满足交换律，<span class="math inline">\(A+B=B+A\)</span></p></li>
+</ol>
+<p>对于<span class="math inline">\(n*n\)</span>矩阵的乘法，</p>
+<ol type="1">
+<li>满足封闭性，两个实数相乘还是实数。</li>
+<li>满足结合律，<span
+class="math inline">\(（A*B）*C=A*(B*C)\)</span></li>
+<li>有单位元<span class="math inline">\(E=\begin{pmatrix}
+1&amp;0&amp;0\\ 0&amp;1&amp;0\\ 0&amp;0&amp;1\\
+\end{pmatrix}\)</span>，<span class="math inline">\(A*E=A\)</span>​</li>
+<li>存在逆元<span class="math inline">\(A^-1\)</span>，<span
+class="math inline">\(A*A^{-1}=E\)</span></li>
+</ol>
+<p>但是对于<span
+class="math inline">\(m*n\)</span>矩阵其逆元不一定存在。至此，我们对照上面的群论的知识。我们可以得出他是一个<strong>环</strong>。可把他称为为一个<strong>矩阵环</strong>。</p>
+<h3 id="矩阵乘法的意义">矩阵乘法的意义</h3>
+<p>对于矩阵的加法，我们可以理解为其列向量组的加法。就是所在空间向量的相加。
+<span class="math display">\[
+\begin{pmatrix}
+    1&amp;1&amp;3\\
+    1&amp;3&amp;1\\
+    3&amp;1&amp;1\\
+\end{pmatrix}+
+\begin{pmatrix}
+    1&amp;1&amp;1\\
+    1&amp;1&amp;1\\
+    1&amp;1&amp;1\\
+\end{pmatrix}=
+\begin{pmatrix}
+    2&amp;2&amp;4\\
+    2&amp;4&amp;2\\
+    4&amp;2&amp;2\\
+\end{pmatrix}
+\]</span> <img src="https://s2.loli.net/2022/05/21/ah4mUJ983HjPeiv.png" srcset="/img/loading.gif" lazyload
+alt="image-20220521204001631" /></p>
+<p>但是对于矩阵的乘法怎么理解？为什么要规定这个计算起来这么复杂的乘法？矩阵的乘法实际上是一个线性变换。我们先假设有两个向量<span
+class="math inline">\(\vec{a_1}=(1,1)\)</span>，<span
+class="math inline">\(\vec{a_2}=(-1,1)\)</span>。可以绘图如下图所示。
+<span class="math display">\[
+\begin{pmatrix}
+    \vec{a_1}&amp;
+    \vec{a_2}\\
+\end{pmatrix}=
+\begin{pmatrix}
+    1&amp;1\\
+    -1&amp;1\\
+\end{pmatrix}
+\]</span> <img src="https://s2.loli.net/2022/05/21/P8k2OGDMh5vnXtL.png" srcset="/img/loading.gif" lazyload
+alt="image-20220521212459136" /></p>
+<p>伸缩矩阵：<span
+class="math inline">\(\begin{pmatrix}  2&amp;0\\  0&amp;2\\
+\end{pmatrix}\)</span>，一个矩阵乘以一个伸缩矩阵。 <span
+class="math display">\[
+\begin{pmatrix}
+    \vec{a_1}&amp;
+    \vec{a_2}\\
+\end{pmatrix}*
+\begin{pmatrix}
+    2&amp;0\\
+    0&amp;2\\
+\end{pmatrix}=
+\begin{pmatrix}
+    2*a_1&amp;2*a_2
+\end{pmatrix}
+\]</span></p>
+<figure>
+<img src="https://s2.loli.net/2022/05/21/3PhQB7uHtrOClUi.png" srcset="/img/loading.gif" lazyload
+alt="image-20220521214044576" />
+<figcaption aria-hidden="true">image-20220521214044576</figcaption>
+</figure>
+<p>旋转矩阵：<span
+class="math inline">\(\begin{pmatrix}  \sqrt{2}/2&amp;\sqrt{2}/2\\  -\sqrt{2}/2&amp;\sqrt{2}/2\\
+\end{pmatrix}\)</span>， <span class="math display">\[
+\begin{pmatrix}
+    \vec{a_1}&amp;
+    \vec{a_2}\\
+\end{pmatrix}*
+\begin{pmatrix}
+    \sqrt{2}/2&amp;\sqrt{2}/2\\
+    -\sqrt{2}/2&amp;\sqrt{2}/2\\
+\end{pmatrix}=
+\begin{pmatrix}
+    0&amp;\sqrt{2}\\
+    \sqrt{2}&amp;0\\
+\end{pmatrix}
+\]</span></p>
+<figure>
+<img src="https://s2.loli.net/2022/05/21/k8ciHzdIEDMZ734.png" srcset="/img/loading.gif" lazyload
+alt="image-20220521214015389" />
+<figcaption aria-hidden="true">image-20220521214015389</figcaption>
+</figure>
+<p>同时的，我们可以把矩阵的乘法看成是两个变换的合成。 <span
+class="math display">\[
+\begin{pmatrix}
+    \vec{a_1}&amp;
+    \vec{a_2}\\
+\end{pmatrix}*
+\begin{pmatrix}
+    2&amp;0\\
+    0&amp;2\\
+\end{pmatrix}*\begin{pmatrix}
+    \sqrt{2}/2&amp;\sqrt{2}/2\\
+    -\sqrt{2}/2&amp;\sqrt{2}/2\\
+\end{pmatrix}=
+\begin{pmatrix}
+    \vec{a_1}&amp;
+    \vec{a_2}\\
+\end{pmatrix}*
+\begin{pmatrix}
+    \sqrt{2}&amp;\sqrt{2}\\
+    -\sqrt{2}&amp;\sqrt{2}\\
+\end{pmatrix}=
+\begin{pmatrix}
+    0&amp;2\sqrt{2}\\
+    2\sqrt{2}&amp;0\\
+\end{pmatrix}
+\]</span> <span
+class="math inline">\(\begin{pmatrix}  \sqrt{2}&amp;\sqrt{2}\\  -\sqrt{2}&amp;\sqrt{2}\\
+\end{pmatrix}= \begin{pmatrix}  2&amp;0\\  0&amp;2\\
+\end{pmatrix}*\begin{pmatrix}  \sqrt{2}/2&amp;\sqrt{2}/2\\  -\sqrt{2}/2&amp;\sqrt{2}/2\\
+\end{pmatrix}\)</span>这里就是先进行伸缩别人然后总在进行旋转变换的变换矩阵。</p>
+<h3 id="矩阵的逆">矩阵的逆</h3>
+<p>矩阵的逆主要是从变换矩阵的角度出发。<span
+class="math inline">\(A*B*B^{-1}=A\)</span>，我们可以这么去理解，<span
+class="math inline">\(A*B\)</span>是向量组A在B矩阵的变换下，得到了一个新的矩阵<span
+class="math inline">\(A*B\)</span>。此时，我们再乘以一个矩阵<span
+class="math inline">\(B\)</span>，也就是再经过一个变换<span
+class="math inline">\(B^{-1}\)</span>，我们又可以得到最初的矩阵A。这个变换<span
+class="math inline">\(B^{-1}\)</span>就是变换<span
+class="math inline">\(B\)</span>的逆变换。</p>
+值得一提的就是，有些矩阵是没有没有逆变换的。这些矩阵就是非满秩矩阵。为什么非满秩矩阵起到了一个降维的作用，就比如说$
+<span class="math display">\[\begin{pmatrix}
+    1&amp;1\\
+    0&amp;0\\
+\end{pmatrix}\]</span>
+<p>$， <span
+class="math inline">\(\begin{pmatrix}  \vec{a_1}&amp;  \vec{a_2}\\
+\end{pmatrix}* \begin{pmatrix}  1&amp;1\\  0&amp;0\\ \end{pmatrix}=
+\begin{pmatrix}  \vec{a_1}+\vec{a_2}&amp;0\\ \end{pmatrix}\)</span>
+，这个向量组变成了一个一维的向量组。这时候我们无论如何也找不出逆矩阵再恢复为二维的向量组。这就是为什么非满秩矩阵没有逆矩阵的原因。
+## 矩阵行列式</p>
+<p>终于到了矩阵行列，式矩阵的行列式主要有两个含义。</p>
+<h3
+id="矩阵的行列式是矩阵向量组所构成的有向体积">矩阵的行列式是矩阵向量组所构成的有向体积。</h3>
+<p>对于矩阵<span
+class="math inline">\(\begin{pmatrix}  3&amp;1\\  1&amp;3\\
+\end{pmatrix}\)</span>这里指的有向体积是下图的这个菱形的面积，你可使用利用几何的知识计算它的面积，但是更加简单的你可以直接计算<span
+class="math inline">\(\begin{vmatrix}  3&amp;1\\  1&amp;3\\
+\end{vmatrix}=
+8\)</span>，这里指的有向体积，是指这个数值计算出来可能是负数。比如说<span
+class="math inline">\(\begin{vmatrix}  1&amp;3\\  3&amp;1\\
+\end{vmatrix}=
+-8\)</span>。这里与叉乘有一点的关系，叉乘强调了一个顺序，<span
+class="math inline">\(\vec{a}\times\vec{b}=-\vec{b}\times\vec{a}\)</span>。
+<img src="https://s2.loli.net/2022/05/21/StQhENiLxOgzuYl.png" srcset="/img/loading.gif" lazyload
+alt="image-20220521221142372" /></p>
+<p>对于三维向量也是一样<span
+class="math inline">\(\begin{vmatrix}  1&amp;0&amp;0\\  0&amp;1&amp;0\\  0&amp;0&amp;1\\
+\end{vmatrix}=
+1\)</span>表示，空间中一个长宽高为1的正方体的体积为1。</p>
+<p>特别的，如果一个矩阵是非满秩矩阵，在这个维数下的体积就应该是零。<span
+class="math inline">\(\begin{vmatrix}  1&amp;0&amp;0\\  0&amp;1&amp;0\\  0&amp;0&amp;0\\
+\end{vmatrix}=
+0\)</span>，这个表示在三维空间，长方体的长宽分别为1，但是它的高为0，那么它的体积就应该为0。</p>
+<h3
+id="矩阵的乘法表示线性变换的伸缩比例">矩阵的乘法表示线性变换的伸缩比例</h3>
+<p>首先，想说明一点，这个东西其实还是挺重要的。我们考察一下之前的伸缩矩阵和旋转矩阵的行列式，<span
+class="math inline">\(\begin{vmatrix}  2&amp;0\\  0&amp;2\\
+\end{vmatrix}=4\)</span>，那么就是说，在这个线性变化之后，原来的体积将会变化为原来的四倍。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/21/gkphEbxOsul1PB8.png" srcset="/img/loading.gif" lazyload
+alt="image-20220521223157129" />
+<figcaption aria-hidden="true">image-20220521223157129</figcaption>
+</figure>
+<p>而对于旋转矩阵<span
+class="math inline">\(\begin{vmatrix}  \sqrt{2}/2&amp;\sqrt{2}/2\\  -\sqrt{2}/2&amp;\sqrt{2}/2\\
+\end{vmatrix}=1\)</span>，经过变换之后，它的体积并没有伸缩。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/21/oy7hHT3OCdcWr8f.png" srcset="/img/loading.gif" lazyload
+alt="image-20220521223324365" />
+<figcaption aria-hidden="true">image-20220521223324365</figcaption>
+</figure>
+<p>接下来介绍一个很重要的东西，那就是雅可比行列式。</p>
+<p>让我们来看二重积分的例子<span
+class="math inline">\(\begin{pmatrix}  \vec{dx}&amp; \vec{dy}
+\end{pmatrix}= \begin{pmatrix}  dx&amp;0\\  0&amp;dy
+\end{pmatrix}\)</span>，他们的乘积<span
+class="math inline">\(dx*dy\)</span>也就是他们的行列式，他们所表示的面积可以如图所示。<img
+src="https://s2.loli.net/2022/05/21/5IfkCYyUNqFmR21.png" srcset="/img/loading.gif" lazyload alt="1" /></p>
+<p>诶呀，算了突然发现好麻烦，推荐这个回答看一下。(https://www.zhihu.com/search?type=content&amp;q=雅可比行列式)</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/21/%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4%E5%92%8C%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
