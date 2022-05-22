@@ -16,12 +16,12 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="矩阵的乘法和矩阵的行列式矩阵乘法和环群论和环在前一章当中，我们介绍了加法封闭性的线性空间，接下来让我们来介绍下一个非常重要的代数结构，那就是环。接下来，我希望读者可以花一分钟的时间，仔细读一下下面的顺序流程。如果看不懂也不没有关系。封闭性、结合律、单位元、逆元、交换律……  以上是群论的一个内容的框图。我们利用群论的知识，也可以把线性空间定义为一个定义了数量乘法的阿贝尔群。群论的知识说简单也抽象，">
+    <meta name="description" content="矩阵的乘法和矩阵的行列式 矩阵乘法和环 群论和环 在前一章当中，我们介绍了加法封闭性的线性空间，接下来让我们来介绍下一个非常重要的代数结构，那就是环。接下来，我希望读者可以花一分钟的时间，仔细读一下下面的顺序流程。如果看不懂也不没有关系。封闭性、结合律、单位元、逆元、交换律……   feb8dbb0222be967e7b04f81d69267cc_1440w  以上是群论的一个内容">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jinyan">
 <meta property="og:url" content="http://example.com/2022/05/21/%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B9%98%E6%B3%95%E5%92%8C%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Jinyan">
-<meta property="og:description" content="矩阵的乘法和矩阵的行列式矩阵乘法和环群论和环在前一章当中，我们介绍了加法封闭性的线性空间，接下来让我们来介绍下一个非常重要的代数结构，那就是环。接下来，我希望读者可以花一分钟的时间，仔细读一下下面的顺序流程。如果看不懂也不没有关系。封闭性、结合律、单位元、逆元、交换律……  以上是群论的一个内容的框图。我们利用群论的知识，也可以把线性空间定义为一个定义了数量乘法的阿贝尔群。群论的知识说简单也抽象，">
+<meta property="og:description" content="矩阵的乘法和矩阵的行列式 矩阵乘法和环 群论和环 在前一章当中，我们介绍了加法封闭性的线性空间，接下来让我们来介绍下一个非常重要的代数结构，那就是环。接下来，我希望读者可以花一分钟的时间，仔细读一下下面的顺序流程。如果看不懂也不没有关系。封闭性、结合律、单位元、逆元、交换律……   feb8dbb0222be967e7b04f81d69267cc_1440w  以上是群论的一个内容">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://s2.loli.net/2022/05/21/TZHIkUtLMFYQEVc.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/05/21/ah4mUJ983HjPeiv.png">
@@ -31,9 +31,8 @@
 <meta property="og:image" content="https://s2.loli.net/2022/05/21/StQhENiLxOgzuYl.png">
 <meta property="og:image" content="https://s2.loli.net/2022/05/21/gkphEbxOsul1PB8.png">
 <meta property="og:image" content="https://s2.loli.net/2022/05/21/oy7hHT3OCdcWr8f.png">
-<meta property="og:image" content="https://s2.loli.net/2022/05/21/5IfkCYyUNqFmR21.png">
 <meta property="article:published_time" content="2022-05-21T11:00:42.977Z">
-<meta property="article:modified_time" content="2022-05-22T01:32:13.189Z">
+<meta property="article:modified_time" content="2022-05-22T01:35:24.676Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s2.loli.net/2022/05/21/TZHIkUtLMFYQEVc.jpg">
@@ -247,114 +246,319 @@
             <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <h1 id="矩阵的乘法和矩阵的行列式"><a href="#矩阵的乘法和矩阵的行列式" class="headerlink" title="矩阵的乘法和矩阵的行列式"></a>矩阵的乘法和矩阵的行列式</h1><h2 id="矩阵乘法和环"><a href="#矩阵乘法和环" class="headerlink" title="矩阵乘法和环"></a>矩阵乘法和环</h2><h3 id="群论和环"><a href="#群论和环" class="headerlink" title="群论和环"></a>群论和环</h3><p>在前一章当中，我们介绍了加法封闭性的线性空间，接下来让我们来介绍下一个非常重要的代数结构，那就是<strong>环</strong>。接下来，我希望读者可以花一分钟的时间，仔细读一下下面的顺序流程。如果看不懂也不没有关系。封闭性、结合律、单位元、逆元、交换律……</p>
-<p><img src="https://s2.loli.net/2022/05/21/TZHIkUtLMFYQEVc.jpg" srcset="/img/loading.gif" lazyload alt="feb8dbb0222be967e7b04f81d69267cc_1440w"></p>
+              <h1 id="矩阵的乘法和矩阵的行列式">矩阵的乘法和矩阵的行列式</h1>
+<h2 id="矩阵乘法和环">矩阵乘法和环</h2>
+<h3 id="群论和环">群论和环</h3>
+<p>在前一章当中，我们介绍了加法封闭性的线性空间，接下来让我们来介绍下一个非常重要的代数结构，那就是<strong>环</strong>。接下来，我希望读者可以花一分钟的时间，仔细读一下下面的顺序流程。如果看不懂也不没有关系。封闭性、结合律、单位元、逆元、交换律……</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/21/TZHIkUtLMFYQEVc.jpg" srcset="/img/loading.gif" lazyload
+alt="feb8dbb0222be967e7b04f81d69267cc_1440w" />
+<figcaption
+aria-hidden="true">feb8dbb0222be967e7b04f81d69267cc_1440w</figcaption>
+</figure>
 <p>以上是<strong>群论</strong>的一个内容的框图。我们利用群论的知识，也可以把线性空间定义为一个<strong>定义了数量乘法的阿贝尔群</strong>。群论的知识说简单也抽象，说复杂也不难。但是我觉得我说不清楚。从这张图当中，你也许就明白了为什么代数是研究运算的（此前说过）。对于矩阵为什么不满足乘法的交换律。让我们先慢慢了解群论的一小部分，</p>
 <table>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 46%" />
+<col style="width: 46%" />
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th></th>
 <th><strong>加法</strong></th>
 <th><strong>乘法</strong></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td><strong>封闭性</strong></td>
 <td><strong>集合上的元素相加之后仍在集合当中</strong></td>
 <td><strong>集合上的元素相乘之后仍在集合当中</strong></td>
 </tr>
-<tr>
+<tr class="even">
 <td><strong>结合律</strong></td>
-<td>$（a+b）+c&#x3D;a+(b+c)$</td>
-<td>$(a<em>b)<em>c&#x3D;a</em>(b</em>c)$</td>
+<td><span class="math inline">\(（a+b）+c=a+(b+c)\)</span></td>
+<td><span class="math inline">\((a*b)*c=a*(b*c)\)</span></td>
 </tr>
-<tr>
+<tr class="odd">
 <td><strong>单位元</strong></td>
-<td><strong>存在0，使得，$a+0&#x3D;a$，我们便把0成为单位元</strong></td>
-<td><strong>存在0，使得，$a*0&#x3D;a$，便把0成为单位元</strong></td>
+<td><strong>存在0，使得，<span
+class="math inline">\(a+0=a\)</span>，我们便把0成为单位元</strong></td>
+<td><strong>存在0，使得，<span
+class="math inline">\(a*0=a\)</span>，便把0成为单位元</strong></td>
 </tr>
-<tr>
+<tr class="even">
 <td><strong>逆元</strong></td>
-<td><strong>存在$a^-1$，使得，$a^-1+a&#x3D;0$，这里的0指的是单位元，便把$a^-1$称为逆元</strong></td>
-<td><strong>存在$a^-1$，使得，$a^-1*a&#x3D;0$，这里的0指的是单位元，便把$a^-1$称为逆元</strong></td>
+<td><strong>存在<span class="math inline">\(a^-1\)</span>，使得，<span
+class="math inline">\(a^-1+a=0\)</span>，这里的0指的是单位元，便把<span
+class="math inline">\(a^-1\)</span>称为逆元</strong></td>
+<td><strong>存在<span class="math inline">\(a^-1\)</span>，使得，<span
+class="math inline">\(a^-1*a=0\)</span>，这里的0指的是单位元，便把<span
+class="math inline">\(a^-1\)</span>称为逆元</strong></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>交换律</td>
-<td>$a+b&#x3D;b+a$</td>
-<td>$a<em>b&#x3D;b</em>a$</td>
+<td><span class="math inline">\(a+b=b+a\)</span></td>
+<td><span class="math inline">\(a*b=b*a\)</span></td>
 </tr>
-</tbody></table>
-<p>举个例子，实数集合$R$，对于它的加法$(R,+)$</p>
-<ol>
-<li><p>满足封闭性，两个实数相加还是实数</p>
-</li>
-<li><p>满足结合律，$（a+b）+c&#x3D;a+(b+c)$</p>
-</li>
-<li><p>存在单位元0，$a+0&#x3D;a$</p>
-</li>
-<li><p>存在逆元，a+（-a）&#x3D;0</p>
-</li>
-<li><p>满足交换律，$a+b&#x3D;b+a$</p>
-</li>
+</tbody>
+</table>
+<p>举个例子，实数集合<span
+class="math inline">\(R\)</span>，对于它的加法<span
+class="math inline">\((R,+)\)</span></p>
+<ol type="1">
+<li><p>满足封闭性，两个实数相加还是实数</p></li>
+<li><p>满足结合律，<span
+class="math inline">\(（a+b）+c=a+(b+c)\)</span></p></li>
+<li><p>存在单位元0，<span class="math inline">\(a+0=a\)</span></p></li>
+<li><p>存在逆元，a+（-a）=0</p></li>
+<li><p>满足交换律，<span class="math inline">\(a+b=b+a\)</span></p></li>
 </ol>
-<p>对于乘法，$(R,*)$</p>
-<ol>
-<li><p>满足封闭性，两个实数相乘还是实数。</p>
-</li>
-<li><p>满足结合律，$（a<em>b）</em>c&#x3D;a*(b*c)$</p>
-</li>
-<li><p>有单位元1，$a*1&#x3D;a$</p>
-</li>
-<li><p>存在逆元，$a*a^{-1}&#x3D;1$</p>
-</li>
-<li><p>满足交换律，$a<em>b&#x3D;b</em>a$</p>
-</li>
+<p>对于乘法，<span class="math inline">\((R,*)\)</span></p>
+<ol type="1">
+<li><p>满足封闭性，两个实数相乘还是实数。</p></li>
+<li><p>满足结合律，<span
+class="math inline">\(（a*b）*c=a*(b*c)\)</span></p></li>
+<li><p>有单位元1，<span class="math inline">\(a*1=a\)</span></p></li>
+<li><p>存在逆元，<span
+class="math inline">\(a*a^{-1}=1\)</span></p></li>
+<li><p>满足交换律，<span class="math inline">\(a*b=b*a\)</span></p></li>
 </ol>
-<p>好的，满足了这十条性质，那我们便把它成为一个域，简称实数域。除了实数域，还有复数域可能也是常用，对于复数的乘法，我们是这样规定的，$(a_1+i<em>b_1)</em>(a_2+i<em>b_2)&#x3D;(a_1</em>a_2-b_1<em>b_2)+i</em>(a_1<em>a_2+b_1</em>b_2)$，没错，一定要注意，这是我们定义出来。他同样满足乘法的五条性质。加法也是，故我们可以把他成为复数域。</p>
+<p>好的，满足了这十条性质，那我们便把它成为一个域，简称实数域。除了实数域，还有复数域可能也是常用，对于复数的乘法，我们是这样规定的，<span
+class="math inline">\((a_1+i*b_1)*(a_2+i*b_2)=(a_1*a_2-b_1*b_2)+i*(a_1*a_2+b_1*b_2)\)</span>，没错，一定要注意，这是我们定义出来。他同样满足乘法的五条性质。加法也是，故我们可以把他成为复数域。</p>
 <p>那同样的道理我们的矩阵是不是也可以成为一个域呢？让我们回顾一下我们是怎么定义矩阵的加法还有乘法的。</p>
-<p>$$<br>\begin{pmatrix}<br>    a_1&amp;b_1&amp;c_1\<br>    a_2&amp;b_2&amp;c_2\<br>    a_3&amp;b_3&amp;c_3\<br>\end{pmatrix}+<br>\begin{pmatrix}<br>    d_1&amp;e_1&amp;f_1\<br>    d_2&amp;e_2&amp;f_2\<br>    d_3&amp;e_3&amp;f_3\<br>\end{pmatrix}&#x3D;<br>\begin{pmatrix}<br>    a_1+d_1&amp;b_1+e_1&amp;c_1+f_1\<br>    a_2+d_2&amp;b_2+e_2&amp;c_2+f_2\<br>    a_3+d_3&amp;b_3+e_3&amp;c_3+f_3\<br>\end{pmatrix}<br>$$</p>
-<p>$$<br>\begin{pmatrix}<br>    a_1&amp;b_1\<br>    a_2&amp;b_2\<br>\end{pmatrix}*<br>\begin{pmatrix}<br>    c_1&amp;d_1\<br>    c_2&amp;d_2\<br>\end{pmatrix}&#x3D;<br>\begin{pmatrix}<br>    a_1<em>c_1+a_2</em>c_2&amp;a_1<em>d_1+a_2</em>d_2\<br>    b_1<em>c_1+b_2</em>c_2&amp;b_1<em>d_1+b_2</em>d_2<br>\end{pmatrix}<br>$$</p>
-<p>可以验证对于$n*n$矩阵，还有其加法</p>
-<ol>
-<li><p>满足封闭性，两个矩阵相加还是矩阵</p>
-</li>
-<li><p>满足结合律，$(A+B)+C&#x3D;A+(B+C)$，</p>
-</li>
-<li><p>存在单位元$O&#x3D;\begin{pmatrix}<br> 0&amp;0&amp;0\<br> 0&amp;0&amp;0\<br> 0&amp;0&amp;0\<br> \end{pmatrix}$，$A+O&#x3D;A$</p>
-</li>
-<li><p>存在逆元-A，$A+（-A）&#x3D;O$</p>
-</li>
-<li><p>满足交换律，$A+B&#x3D;B+A$</p>
-</li>
+<p><span class="math display">\[
+\begin{pmatrix}
+    a_1&amp;b_1&amp;c_1\\
+    a_2&amp;b_2&amp;c_2\\
+    a_3&amp;b_3&amp;c_3\\
+\end{pmatrix}+
+\begin{pmatrix}
+    d_1&amp;e_1&amp;f_1\\
+    d_2&amp;e_2&amp;f_2\\
+    d_3&amp;e_3&amp;f_3\\
+\end{pmatrix}=
+\begin{pmatrix}
+    a_1+d_1&amp;b_1+e_1&amp;c_1+f_1\\
+    a_2+d_2&amp;b_2+e_2&amp;c_2+f_2\\
+    a_3+d_3&amp;b_3+e_3&amp;c_3+f_3\\
+\end{pmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\begin{pmatrix}
+    a_1&amp;b_1\\
+    a_2&amp;b_2\\
+\end{pmatrix}*
+\begin{pmatrix}
+    c_1&amp;d_1\\
+    c_2&amp;d_2\\
+\end{pmatrix}=
+\begin{pmatrix}
+    a_1*c_1+a_2*c_2&amp;a_1*d_1+a_2*d_2\\
+    b_1*c_1+b_2*c_2&amp;b_1*d_1+b_2*d_2
+\end{pmatrix}
+\]</span></p>
+<p>可以验证对于<span
+class="math inline">\(n*n\)</span>矩阵，还有其加法</p>
+<ol type="1">
+<li><p>满足封闭性，两个矩阵相加还是矩阵</p></li>
+<li><p>满足结合律，<span
+class="math inline">\((A+B)+C=A+(B+C)\)</span>，</p></li>
+<li><p>存在单位元<span
+class="math inline">\(O=\begin{pmatrix}  0&amp;0&amp;0\\  0&amp;0&amp;0\\  0&amp;0&amp;0\\  \end{pmatrix}\)</span>，<span
+class="math inline">\(A+O=A\)</span></p></li>
+<li><p>存在逆元-A，<span
+class="math inline">\(A+（-A）=O\)</span></p></li>
+<li><p>满足交换律，<span class="math inline">\(A+B=B+A\)</span></p></li>
 </ol>
-<p>对于$n*n$矩阵的乘法，</p>
-<ol>
+<p>对于<span class="math inline">\(n*n\)</span>矩阵的乘法，</p>
+<ol type="1">
 <li>满足封闭性，两个实数相乘还是实数。</li>
-<li>满足结合律，$（A<em>B）</em>C&#x3D;A*(B*C)$</li>
-<li>有单位元$E&#x3D;\begin{pmatrix}<br>1&amp;0&amp;0\<br>0&amp;1&amp;0\<br>0&amp;0&amp;1\<br>\end{pmatrix}$，$A*E&#x3D;A$​</li>
-<li>存在逆元$A^-1$，$A*A^{-1}&#x3D;E$</li>
+<li>满足结合律，<span
+class="math inline">\(（A*B）*C=A*(B*C)\)</span></li>
+<li>有单位元<span class="math inline">\(E=\begin{pmatrix}
+1&amp;0&amp;0\\ 0&amp;1&amp;0\\ 0&amp;0&amp;1\\
+\end{pmatrix}\)</span>，<span class="math inline">\(A*E=A\)</span>​</li>
+<li>存在逆元<span class="math inline">\(A^-1\)</span>，<span
+class="math inline">\(A*A^{-1}=E\)</span></li>
 </ol>
-<p>但是对于$m*n$矩阵其逆元不一定存在。而且它不满足乘法的结合律。至此，我们对照上面的群论的知识。我们可以得出他是一个<strong>环</strong>。可把他称为为一个<strong>矩阵环</strong>。（读者可以百度一下矩阵环）环是比域条件更为宽松的代数结构。</p>
-<h3 id="矩阵乘法的意义"><a href="#矩阵乘法的意义" class="headerlink" title="矩阵乘法的意义"></a>矩阵乘法的意义</h3><p>对于矩阵的加法，我们可以理解为其列向量组的加法。就是所在空间向量的相加。<br>$$<br>\left(\begin{array}{c|c|c}<br>    1&amp;1&amp;3\<br>    1&amp;3&amp;1\<br>    3&amp;1&amp;1\<br>\end{array}\right)+<br>\left(\begin{array}{c|c|c}<br>    1&amp;1&amp;1\<br>    1&amp;1&amp;1\<br>    1&amp;1&amp;1\<br>\end{array}\right)&#x3D;<br>\left(\begin{array}{c|c|c}<br>    2&amp;2&amp;4\<br>    2&amp;4&amp;2\<br>    4&amp;2&amp;2\<br>\end{array}\right)<br>$$<br><img src="https://s2.loli.net/2022/05/21/ah4mUJ983HjPeiv.png" srcset="/img/loading.gif" lazyload alt="image-20220521204001631"></p>
-<p>但是对于矩阵的乘法怎么理解？为什么要规定这个计算起来这么复杂的乘法？矩阵的乘法实际上是一个线性变换。我们先假设有两个向量$\vec{a_1}&#x3D;(1,1)$，$\vec{a_2}&#x3D;(-1,1)$。可以绘图如下图所示。<br>$$<br>\begin{pmatrix}<br>    \vec{a_1}&amp;<br>    \vec{a_2}\<br>\end{pmatrix}&#x3D;<br>\begin{pmatrix}<br>    1&amp;1\<br>    -1&amp;1\<br>\end{pmatrix}<br>$$<br><img src="https://s2.loli.net/2022/05/21/P8k2OGDMh5vnXtL.png" srcset="/img/loading.gif" lazyload alt="image-20220521212459136"></p>
-<p>伸缩矩阵：$\begin{pmatrix}<br>    2&amp;0\<br>    0&amp;2\<br>\end{pmatrix}$，一个矩阵乘以一个伸缩矩阵。<br>$$<br>\begin{pmatrix}<br>    \vec{a_1}&amp;<br>    \vec{a_2}\<br>\end{pmatrix}*<br>\begin{pmatrix}<br>    2&amp;0\<br>    0&amp;2\<br>\end{pmatrix}&#x3D;<br>\begin{pmatrix}<br>    2<em>a_1&amp;2</em>a_2<br>\end{pmatrix}<br>$$</p>
-<p><img src="https://s2.loli.net/2022/05/21/3PhQB7uHtrOClUi.png" srcset="/img/loading.gif" lazyload alt="image-20220521214044576"></p>
-<p>旋转矩阵：$\begin{pmatrix}<br>    \sqrt{2}&#x2F;2&amp;\sqrt{2}&#x2F;2\<br>    -\sqrt{2}&#x2F;2&amp;\sqrt{2}&#x2F;2\<br>\end{pmatrix}$，<br>$$<br>\begin{pmatrix}<br>    \vec{a_1}&amp;<br>    \vec{a_2}\<br>\end{pmatrix}*<br>\begin{pmatrix}<br>    \sqrt{2}&#x2F;2&amp;\sqrt{2}&#x2F;2\<br>    -\sqrt{2}&#x2F;2&amp;\sqrt{2}&#x2F;2\<br>\end{pmatrix}&#x3D;<br>\begin{pmatrix}<br>    0&amp;\sqrt{2}\<br>    \sqrt{2}&amp;0\<br>\end{pmatrix}<br>$$</p>
-<p><img src="https://s2.loli.net/2022/05/21/k8ciHzdIEDMZ734.png" srcset="/img/loading.gif" lazyload alt="image-20220521214015389"></p>
-<p>同时的，我们可以把矩阵的乘法看成是两个变换的合成。<br>$$<br>\begin{pmatrix}<br>    \vec{a_1}&amp;<br>    \vec{a_2}\<br>\end{pmatrix}*<br>\begin{pmatrix}<br>    2&amp;0\<br>    0&amp;2\<br>\end{pmatrix}<em>\begin{pmatrix}<br>    \sqrt{2}&#x2F;2&amp;\sqrt{2}&#x2F;2\<br>    -\sqrt{2}&#x2F;2&amp;\sqrt{2}&#x2F;2\<br>\end{pmatrix}&#x3D;<br>\begin{pmatrix}<br>    \vec{a_1}&amp;<br>    \vec{a_2}\<br>\end{pmatrix}</em><br>\begin{pmatrix}<br>    \sqrt{2}&amp;\sqrt{2}\<br>    -\sqrt{2}&amp;\sqrt{2}\<br>\end{pmatrix}&#x3D;<br>\begin{pmatrix}<br>    0&amp;2\sqrt{2}\<br>    2\sqrt{2}&amp;0\<br>\end{pmatrix}<br>$$<br>$\begin{pmatrix}<br>    \sqrt{2}&amp;\sqrt{2}\<br>    -\sqrt{2}&amp;\sqrt{2}\<br>\end{pmatrix}&#x3D;<br>\begin{pmatrix}<br>    2&amp;0\<br>    0&amp;2\<br>\end{pmatrix}*\begin{pmatrix}<br>    \sqrt{2}&#x2F;2&amp;\sqrt{2}&#x2F;2\<br>    -\sqrt{2}&#x2F;2&amp;\sqrt{2}&#x2F;2\<br>\end{pmatrix}$这里就是先进行伸缩别人然后总在进行旋转变换的变换矩阵。</p>
-<h3 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h3><p>矩阵的逆主要是从变换矩阵的角度出发。$A<em>B</em>B^{-1}&#x3D;A$，我们可以这么去理解，$A<em>B$是向量组A在B矩阵的变换下，得到了一个新的矩阵$A</em>B$。此时，我们再乘以一个矩阵$B^{-1}$，也就是再经过一个变换$B^{-1}$，我们又可以得到最初的矩阵A。这个变换$B^{-1}$就是变换$B$的逆变换。</p>
-<p>值得一提的就是，有些矩阵是没有没有逆变换的。这些矩阵就是非满秩矩阵。为什么非满秩矩阵美味又逆变换？它起到了一个降维的作用，就比如说$<br>\begin{pmatrix}<br>    1&amp;0\<br>    0&amp;0\<br>\end{pmatrix}$，<br>$\begin{pmatrix}<br>    \vec{a_1}&amp;<br>    \vec{a_2}\<br>\end{pmatrix}*<br>\begin{pmatrix}<br>    1&amp;0\<br>    0&amp;0\<br>\end{pmatrix}&#x3D;<br>\begin{pmatrix}<br>    \vec{a_1}&amp;0\<br>\end{pmatrix}$<br>，这个向量组变成了一个一维的向量组。这时候我们无论如何也找不出逆矩阵再恢复为二维的向量组。这就是为什么非满秩矩阵没有逆矩阵的原因。</p>
-<h2 id="矩阵行列式"><a href="#矩阵行列式" class="headerlink" title="矩阵行列式"></a>矩阵行列式</h2><p>终于到了矩阵行列式，矩阵的行列式主要有两个含义。</p>
-<h3 id="矩阵的行列式是矩阵向量组所构成的有向体积。"><a href="#矩阵的行列式是矩阵向量组所构成的有向体积。" class="headerlink" title="矩阵的行列式是矩阵向量组所构成的有向体积。"></a>矩阵的行列式是矩阵向量组所构成的有向体积。</h3><p>对于矩阵$\begin{pmatrix}<br>    3&amp;1\<br>    1&amp;3\<br>\end{pmatrix}$这里指的有向体积是下图的这个菱形的面积，你可使用利用几何的知识计算它的面积，但是更加简单的方式就是可以直接计算$\begin{vmatrix}<br>    3&amp;1\<br>    1&amp;3\<br>\end{vmatrix}&#x3D;<br>8$，这里指的有向体积，是指这个数值计算出来可能是负数。比如说$\begin{vmatrix}<br>    1&amp;3\<br>    3&amp;1\<br>\end{vmatrix}&#x3D;<br>-8$。这里与叉乘类似，叉乘强调了一个顺序，$\vec{a}\times\vec{b}&#x3D;-\vec{b}\times\vec{a}$。<br><img src="https://s2.loli.net/2022/05/21/StQhENiLxOgzuYl.png" srcset="/img/loading.gif" lazyload alt="image-20220521221142372"></p>
-<p>对于三维向量也是一样$\begin{vmatrix}<br>    1&amp;0&amp;0\<br>    0&amp;1&amp;0\<br>    0&amp;0&amp;1\<br>\end{vmatrix}&#x3D;<br>1$表示，空间中一个长宽高为1的正方体的体积为1。</p>
-<p>特别的，如果一个矩阵是非满秩矩阵，在这个维数下的体积就应该是零。$\begin{vmatrix}<br>    1&amp;0&amp;0\<br>    0&amp;1&amp;0\<br>    0&amp;0&amp;0\<br>\end{vmatrix}&#x3D;<br>0$，这个表示在三维空间，长方体的长宽分别为1，但是它的高为0，那么它的体积就应该为0。</p>
-<h3 id="矩阵的乘法表示线性变换的伸缩比例"><a href="#矩阵的乘法表示线性变换的伸缩比例" class="headerlink" title="矩阵的乘法表示线性变换的伸缩比例"></a>矩阵的乘法表示线性变换的伸缩比例</h3><p>首先，想说明一点，这个东西其实还是挺重要的。我们考察一下之前的伸缩矩阵和旋转矩阵的行列式，$\begin{vmatrix}<br>    2&amp;0\<br>    0&amp;2\<br>\end{vmatrix}&#x3D;4$，那么就是说，在这个线性变化之后，原来的体积将会变化为原来的四倍。下图中的，大菱形是小菱形经过线性变换之后的体积，为原来的四倍。</p>
-<p><img src="https://s2.loli.net/2022/05/21/gkphEbxOsul1PB8.png" srcset="/img/loading.gif" lazyload alt="image-20220521223157129"></p>
-<p>而对于旋转矩阵$\begin{vmatrix}<br>     \sqrt{2}&#x2F;2&amp;\sqrt{2}&#x2F;2\<br>    -\sqrt{2}&#x2F;2&amp;\sqrt{2}&#x2F;2\<br>\end{vmatrix}&#x3D;1$，经过变换之后，它的体积并没有伸缩。</p>
-<p><img src="https://s2.loli.net/2022/05/21/oy7hHT3OCdcWr8f.png" srcset="/img/loading.gif" lazyload alt="image-20220521223324365"></p>
+<p>但是对于<span
+class="math inline">\(m*n\)</span>矩阵其逆元不一定存在。而且它不满足乘法的结合律。至此，我们对照上面的群论的知识。我们可以得出他是一个<strong>环</strong>。可把他称为为一个<strong>矩阵环</strong>。（读者可以百度一下矩阵环）环是比域条件更为宽松的代数结构。</p>
+<h3 id="矩阵乘法的意义">矩阵乘法的意义</h3>
+<p>对于矩阵的加法，我们可以理解为其列向量组的加法。就是所在空间向量的相加。
+<span class="math display">\[
+\left(\begin{array}{c|c|c}
+    1&amp;1&amp;3\\
+    1&amp;3&amp;1\\
+    3&amp;1&amp;1\\
+\end{array}\right)+
+\left(\begin{array}{c|c|c}
+    1&amp;1&amp;1\\
+    1&amp;1&amp;1\\
+    1&amp;1&amp;1\\
+\end{array}\right)=
+\left(\begin{array}{c|c|c}
+    2&amp;2&amp;4\\
+    2&amp;4&amp;2\\
+    4&amp;2&amp;2\\
+\end{array}\right)
+\]</span> <img src="https://s2.loli.net/2022/05/21/ah4mUJ983HjPeiv.png" srcset="/img/loading.gif" lazyload
+alt="image-20220521204001631" /></p>
+<p>但是对于矩阵的乘法怎么理解？为什么要规定这个计算起来这么复杂的乘法？矩阵的乘法实际上是一个线性变换。我们先假设有两个向量<span
+class="math inline">\(\vec{a_1}=(1,1)\)</span>，<span
+class="math inline">\(\vec{a_2}=(-1,1)\)</span>。可以绘图如下图所示。
+<span class="math display">\[
+\begin{pmatrix}
+    \vec{a_1}&amp;
+    \vec{a_2}\\
+\end{pmatrix}=
+\begin{pmatrix}
+    1&amp;1\\
+    -1&amp;1\\
+\end{pmatrix}
+\]</span> <img src="https://s2.loli.net/2022/05/21/P8k2OGDMh5vnXtL.png" srcset="/img/loading.gif" lazyload
+alt="image-20220521212459136" /></p>
+<p>伸缩矩阵：<span
+class="math inline">\(\begin{pmatrix}  2&amp;0\\  0&amp;2\\
+\end{pmatrix}\)</span>，一个矩阵乘以一个伸缩矩阵。 <span
+class="math display">\[
+\begin{pmatrix}
+    \vec{a_1}&amp;
+    \vec{a_2}\\
+\end{pmatrix}*
+\begin{pmatrix}
+    2&amp;0\\
+    0&amp;2\\
+\end{pmatrix}=
+\begin{pmatrix}
+    2*a_1&amp;2*a_2
+\end{pmatrix}
+\]</span></p>
+<figure>
+<img src="https://s2.loli.net/2022/05/21/3PhQB7uHtrOClUi.png" srcset="/img/loading.gif" lazyload
+alt="image-20220521214044576" />
+<figcaption aria-hidden="true">image-20220521214044576</figcaption>
+</figure>
+<p>旋转矩阵：<span
+class="math inline">\(\begin{pmatrix}  \sqrt{2}/2&amp;\sqrt{2}/2\\  -\sqrt{2}/2&amp;\sqrt{2}/2\\
+\end{pmatrix}\)</span>， <span class="math display">\[
+\begin{pmatrix}
+    \vec{a_1}&amp;
+    \vec{a_2}\\
+\end{pmatrix}*
+\begin{pmatrix}
+    \sqrt{2}/2&amp;\sqrt{2}/2\\
+    -\sqrt{2}/2&amp;\sqrt{2}/2\\
+\end{pmatrix}=
+\begin{pmatrix}
+    0&amp;\sqrt{2}\\
+    \sqrt{2}&amp;0\\
+\end{pmatrix}
+\]</span></p>
+<figure>
+<img src="https://s2.loli.net/2022/05/21/k8ciHzdIEDMZ734.png" srcset="/img/loading.gif" lazyload
+alt="image-20220521214015389" />
+<figcaption aria-hidden="true">image-20220521214015389</figcaption>
+</figure>
+<p>同时的，我们可以把矩阵的乘法看成是两个变换的合成。 <span
+class="math display">\[
+\begin{pmatrix}
+    \vec{a_1}&amp;
+    \vec{a_2}\\
+\end{pmatrix}*
+\begin{pmatrix}
+    2&amp;0\\
+    0&amp;2\\
+\end{pmatrix}*\begin{pmatrix}
+    \sqrt{2}/2&amp;\sqrt{2}/2\\
+    -\sqrt{2}/2&amp;\sqrt{2}/2\\
+\end{pmatrix}=
+\begin{pmatrix}
+    \vec{a_1}&amp;
+    \vec{a_2}\\
+\end{pmatrix}*
+\begin{pmatrix}
+    \sqrt{2}&amp;\sqrt{2}\\
+    -\sqrt{2}&amp;\sqrt{2}\\
+\end{pmatrix}=
+\begin{pmatrix}
+    0&amp;2\sqrt{2}\\
+    2\sqrt{2}&amp;0\\
+\end{pmatrix}
+\]</span> <span
+class="math inline">\(\begin{pmatrix}  \sqrt{2}&amp;\sqrt{2}\\  -\sqrt{2}&amp;\sqrt{2}\\
+\end{pmatrix}= \begin{pmatrix}  2&amp;0\\  0&amp;2\\
+\end{pmatrix}*\begin{pmatrix}  \sqrt{2}/2&amp;\sqrt{2}/2\\  -\sqrt{2}/2&amp;\sqrt{2}/2\\
+\end{pmatrix}\)</span>这里就是先进行伸缩别人然后总在进行旋转变换的变换矩阵。</p>
+<h3 id="矩阵的逆">矩阵的逆</h3>
+<p>矩阵的逆主要是从变换矩阵的角度出发。<span
+class="math inline">\(A*B*B^{-1}=A\)</span>，我们可以这么去理解，<span
+class="math inline">\(A*B\)</span>是向量组A在B矩阵的变换下，得到了一个新的矩阵<span
+class="math inline">\(A*B\)</span>。此时，我们再乘以一个矩阵<span
+class="math inline">\(B^{-1}\)</span>，也就是再经过一个变换<span
+class="math inline">\(B^{-1}\)</span>，我们又可以得到最初的矩阵A。这个变换<span
+class="math inline">\(B^{-1}\)</span>就是变换<span
+class="math inline">\(B\)</span>的逆变换。</p>
+值得一提的就是，有些矩阵是没有没有逆变换的。这些矩阵就是非满秩矩阵。为什么非满秩矩阵美味又逆变换？它起到了一个降维的作用，就比如说$
+<span class="math display">\[\begin{pmatrix}
+    1&amp;0\\
+    0&amp;0\\
+\end{pmatrix}\]</span>
+<p>$， <span
+class="math inline">\(\begin{pmatrix}  \vec{a_1}&amp;  \vec{a_2}\\
+\end{pmatrix}* \begin{pmatrix}  1&amp;0\\  0&amp;0\\ \end{pmatrix}=
+\begin{pmatrix}  \vec{a_1}&amp;0\\ \end{pmatrix}\)</span>
+，这个向量组变成了一个一维的向量组。这时候我们无论如何也找不出逆矩阵再恢复为二维的向量组。这就是为什么非满秩矩阵没有逆矩阵的原因。</p>
+<h2 id="矩阵行列式">矩阵行列式</h2>
+<p>终于到了矩阵行列式，矩阵的行列式主要有两个含义。</p>
+<h3
+id="矩阵的行列式是矩阵向量组所构成的有向体积">矩阵的行列式是矩阵向量组所构成的有向体积。</h3>
+<p>对于矩阵<span
+class="math inline">\(\begin{pmatrix}  3&amp;1\\  1&amp;3\\
+\end{pmatrix}\)</span>这里指的有向体积是下图的这个菱形的面积，你可使用利用几何的知识计算它的面积，但是更加简单的方式就是可以直接计算<span
+class="math inline">\(\begin{vmatrix}  3&amp;1\\  1&amp;3\\
+\end{vmatrix}=
+8\)</span>，这里指的有向体积，是指这个数值计算出来可能是负数。比如说<span
+class="math inline">\(\begin{vmatrix}  1&amp;3\\  3&amp;1\\
+\end{vmatrix}= -8\)</span>。这里与叉乘类似，叉乘强调了一个顺序，<span
+class="math inline">\(\vec{a}\times\vec{b}=-\vec{b}\times\vec{a}\)</span>。
+<img src="https://s2.loli.net/2022/05/21/StQhENiLxOgzuYl.png" srcset="/img/loading.gif" lazyload
+alt="image-20220521221142372" /></p>
+<p>对于三维向量也是一样<span
+class="math inline">\(\begin{vmatrix}  1&amp;0&amp;0\\  0&amp;1&amp;0\\  0&amp;0&amp;1\\
+\end{vmatrix}=
+1\)</span>表示，空间中一个长宽高为1的正方体的体积为1。</p>
+<p>特别的，如果一个矩阵是非满秩矩阵，在这个维数下的体积就应该是零。<span
+class="math inline">\(\begin{vmatrix}  1&amp;0&amp;0\\  0&amp;1&amp;0\\  0&amp;0&amp;0\\
+\end{vmatrix}=
+0\)</span>，这个表示在三维空间，长方体的长宽分别为1，但是它的高为0，那么它的体积就应该为0。</p>
+<h3
+id="矩阵的行列式表示线性变换的伸缩比例">矩阵的行列式表示线性变换的伸缩比例</h3>
+<p>首先，想说明一点，这个东西其实还是挺重要的。我们考察一下之前的伸缩矩阵和旋转矩阵的行列式，<span
+class="math inline">\(\begin{vmatrix}  2&amp;0\\  0&amp;2\\
+\end{vmatrix}=4\)</span>，那么就是说，在这个线性变化之后，原来的体积将会变化为原来的四倍。下图中的，大菱形是小菱形经过线性变换之后的体积，为原来的四倍。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/21/gkphEbxOsul1PB8.png" srcset="/img/loading.gif" lazyload
+alt="image-20220521223157129" />
+<figcaption aria-hidden="true">image-20220521223157129</figcaption>
+</figure>
+<p>而对于旋转矩阵<span
+class="math inline">\(\begin{vmatrix}  \sqrt{2}/2&amp;\sqrt{2}/2\\  -\sqrt{2}/2&amp;\sqrt{2}/2\\
+\end{vmatrix}=1\)</span>，经过变换之后，它的体积并没有伸缩。</p>
+<figure>
+<img src="https://s2.loli.net/2022/05/21/oy7hHT3OCdcWr8f.png" srcset="/img/loading.gif" lazyload
+alt="image-20220521223324365" />
+<figcaption aria-hidden="true">image-20220521223324365</figcaption>
+</figure>
 <p>接下来介绍一个很重要的东西，那就是雅可比行列式。</p>
-<p>让我们来看二重积分的例子$\begin{pmatrix}<br>    \vec{dx}&amp; \vec{dy}<br>\end{pmatrix}&#x3D;<br>\begin{pmatrix}<br>    dx&amp;0\<br>    0&amp;dy<br>\end{pmatrix}$，他们的乘积$dx*dy$也就是他们的行列式，他们所表示的面积可以如图所示。<img src="https://s2.loli.net/2022/05/21/5IfkCYyUNqFmR21.png" srcset="/img/loading.gif" lazyload alt="1"></p>
-<p>诶呀，算了突然发现好麻烦，推荐这个回答看一下。(<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?type=content&amp;q=%E9%9B%85%E5%8F%AF%E6%AF%94%E8%A1%8C%E5%88%97%E5%BC%8F">https://www.zhihu.com/search?type=content&amp;q=雅可比行列式</a>)</p>
+<p>让我们来看二重积分的例子<span
+class="math inline">\(\begin{pmatrix}  \vec{dx}&amp; \vec{dy}
+\end{pmatrix}= \begin{pmatrix}  dx&amp;0\\  0&amp;dy
+\end{pmatrix}\)</span>，他们的乘积<span
+class="math inline">\(dx*dy\)</span>也就是他们的行列式，他们所表示的面积可以如图所示。<img
+src="https://s2.loli.net/2022/05/21/5IfkCYyUNqFmR21.png" srcset="/img/loading.gif" lazyload alt="1" /></p>
+<p>诶呀，算了突然发现好麻烦，推荐这个回答看一下。(https://www.zhihu.com/search?type=content&amp;q=雅可比行列式)</p>
 
             </div>
             <hr>
